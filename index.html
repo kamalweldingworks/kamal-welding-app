@@ -47,7 +47,18 @@
 <input type="number">
 
 <button>Save Job</button>
+<h2>Quotation</h2>
 
+<label>Material Cost (Rs.)</label>
+<input type="number" id="materialCost">
+
+<label>Labour Charge (Rs.)</label>
+<input type="number" id="labourCharge">
+
+<label>Total Amount (Rs.)</label>
+<input type="number" id="totalAmount" readonly>
+
+<button onclick="calculateTotal()">Calculate Total</button>
 </div>
 
 <script src="script.js"></script>
