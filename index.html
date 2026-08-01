@@ -1,43 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Lanka Kamal Welding Works</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Kamal Welding Works</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>🔨 Sri Lanka Kamal Welding Works</h1>
+<div class="container">
 
-  <h2>Customer Details</h2>
+<h1>🔨 Sri Lanka Kamal Welding Works</h1>
 
-  <p><b>Customer Name:</b> ____________________</p>
+<h2>Customer Details</h2>
 
-  <p><b>Phone Number:</b> ____________________</p>
+<label>Customer Name</label>
+<input type="text" placeholder="Enter Customer Name">
 
-  <p><b>Address:</b> ____________________</p>
+<label>Phone Number</label>
+<input type="text" placeholder="Enter Phone Number">
 
-  <p><b>Job Type:</b></p>
+<label>Address</label>
+<textarea placeholder="Enter Address"></textarea>
 
-  <ul>
-    <li>Gate</li>
-    <li>Roof</li>
-    <li>Handrail</li>
-    <li>Grill</li>
-    <li>Other</li>
-  </ul>
+<label>Job Type</label>
+<select>
+<option>Gate</option>
+<option>Roof</option>
+<option>Handrail</option>
+<option>Grill</option>
+<option>Stair</option>
+<option>Canopy</option>
+<option>Other</option>
+</select>
 
-  <p><b>Measurements:</b></p>
+<h2>Measurements</h2>
 
-  <p>______________________________________</p>
+<label>Length (ft)</label>
+<input type="number">
 
-  <p><b>Remarks:</b></p>
+<label>Width (ft)</label>
+<input type="number">
 
-  <p>______________________________________</p>
+<label>Height (ft)</label>
+<input type="number">
+
+<h2>Material List</h2>
+
+<table>
+
+<tr>
+<th>Material</th>
+<th>Qty</th>
+</tr>
+
+<tr>
+<td>1½ Box Bar</td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td>Amano Sheet</td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td>Roofing Screws</td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td>Electrodes</td>
+<td><input type="number"></td>
+</tr>
+
+<tr>
+<td>Cutting Discs</td>
+<td><input type="number"></td>
+</tr>
+
+</table>
+
+<h2>Labour Charge</h2>
+
+<input type="number" placeholder="Enter Labour Charge">
+
+<br><br>
+
+<button>Calculate Total</button>
+
+<button>Download PDF</button>
+
+<button>WhatsApp Share</button>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
