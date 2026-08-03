@@ -29,7 +29,7 @@ function downloadPDF() {
 
     doc.setFontSize(12);
     doc.text("Quotation", 20, 35);
-
+    doc.text("Quotation No : Q-0001", 20, 42);
     doc.text("Customer : " + customer, 20, 45);
     doc.text("Phone : " + phone, 20, 55);
     doc.text("Date : " + date, 20, 65);
