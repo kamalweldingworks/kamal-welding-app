@@ -24,11 +24,19 @@ function downloadPDF() {
     let labour = document.getElementById("labourCharge").value;
     let total = document.getElementById("totalAmount").value;
 
-    doc.setFontSize(18);
-    doc.text("Sri Lanka Kamal Welding Works", 20, 20);
+    doc.setFontSize(20);
+doc.text("Kamal Welding & Fabrication Global", 20, 20);
 
-    doc.setFontSize(12);
-    doc.text("Quotation", 20, 35);
+doc.setFontSize(10);
+doc.text("Home of Welding and Trust", 20, 28);
+
+doc.text("Phone : 0714199251", 20, 35);
+doc.text("WhatsApp : 0714199251", 20, 41);
+doc.text("Email : kamalwelding@gmail.com", 20, 47);
+doc.text("Address : Mahawawa, Pandukabayapura, Anuradhapura", 20, 53);
+
+doc.setFontSize(14);
+doc.text("Quotation", 20, 65);
     doc.text("Quotation No : Q-0001", 20, 42);
     doc.text("Customer : " + customer, 20, 45);
     doc.text("Phone : " + phone, 20, 55);
