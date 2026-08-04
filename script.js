@@ -1,3 +1,32 @@
+let uploadedImage = "";
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("jobPhoto").addEventListener("change", function (event) {
+
+        const file = event.target.files[0];
+
+        if (file) {
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                uploadedImage = e.target.result;
+
+                const preview = document.getElementById("photoPreview");
+                preview.src = uploadedImage;
+                preview.style.display = "block";
+
+            };
+
+            reader.readAsDataURL(file);
+
+        }
+
+    });
+
+});
 function calculateTotal() {
 
     let material = Number(document.getElementById("materialCost").value) || 0;
