@@ -124,7 +124,8 @@ if (uploadedImage) {
 
     doc.setFontSize(18);
     doc.text("Job Photo", 20, 20);
-
+}
     doc.addImage(uploadedImage, "JPEG", 20, 30, 170, 180);
 }
 doc.save("Quotation.pdf");
+}
