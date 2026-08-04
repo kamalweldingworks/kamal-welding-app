@@ -7,31 +7,28 @@ function calculateTotal() {
 
 }
 
-document.getElementById("language").addEventListener("change", changeLanguage);
+document.getElementById("jobPhoto").addEventListener("change", function (event) {
 
-function changeLanguage() {
+    const file = event.target.files[0];
 
-    let lang = document.getElementById("language").value;
+    if (file) {
 
-    if (lang === "si") {
+        const reader = new FileReader();
 
-        document.getElementById("lblCustomer").innerHTML = "පාරිභෝගිකයාගේ නම";
-        document.getElementById("lblPhone").innerHTML = "දුරකථන අංකය";
-        document.getElementById("lblDate").innerHTML = "දිනය";
-        document.getElementById("lblAddress").innerHTML = "ලිපිනය";
-        document.getElementById("lblJob").innerHTML = "වැඩ වර්ගය";
+        reader.onload = function (e) {
 
-    } else {
+            const preview = document.getElementById("photoPreview");
 
-        document.getElementById("lblCustomer").innerHTML = "Customer Name";
-        document.getElementById("lblPhone").innerHTML = "Phone Number";
-        document.getElementById("lblDate").innerHTML = "Date";
-        document.getElementById("lblAddress").innerHTML = "Address";
-        document.getElementById("lblJob").innerHTML = "Job Type";
+            preview.src = e.target.result;
+            preview.style.display = "block";
+
+        };
+
+        reader.readAsDataURL(file);
 
     }
 
-}
+});
 
 function downloadPDF() {
 
@@ -75,7 +72,7 @@ function downloadPDF() {
 
     doc.text("Material List", 20, 130);
 
-    const lines = doc.splitTextToSize(materialList || "-", 165);
+    let lines = doc.splitTextToSize(materialList || "-", 165);
     doc.text(lines, 20, 138);
 
     let y = 138 + (lines.length * 7) + 10;
@@ -93,4 +90,5 @@ function downloadPDF() {
     doc.text("Authorized Signature", 120, y + 48);
 
     doc.save("Quotation.pdf");
+
 }
