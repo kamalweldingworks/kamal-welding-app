@@ -117,7 +117,14 @@ function downloadPDF() {
 
     doc.text("Customer Signature", 20, y + 48);
     doc.text("Authorized Signature", 120, y + 48);
+    
+    
+if (uploadedImage) {
+    doc.addPage();
 
-    doc.save("Quotation.pdf");
+    doc.setFontSize(18);
+    doc.text("Job Photo", 20, 20);
 
+    doc.addImage(uploadedImage, "JPEG", 20, 30, 170, 180);
 }
+doc.save("Quotation.pdf");
