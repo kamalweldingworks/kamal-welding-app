@@ -29,9 +29,9 @@ function changeLanguage(){
         document.getElementById("lblAddress").innerHTML="Address";
         document.getElementById("lblJob").innerHTML="Job Type";
 
-    }
+    
 
-}
+
 
 function downloadPDF(){
 
