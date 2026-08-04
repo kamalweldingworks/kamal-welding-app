@@ -1,4 +1,3 @@
-
 function calculateTotal() {
 
     let material = Number(document.getElementById("materialCost").value) || 0;
@@ -55,8 +54,7 @@ function downloadPDF() {
 
     let material = document.getElementById("materialCost").value;
     let labour = document.getElementById("labourCharge").value;
-    let total = document.getElementById("totalAmount").value;
-       doc.setFontSize(20);
+    let total = document.getElementById("totalAmount").value;    doc.setFontSize(20);
     doc.text("Sri Lanka Kamal Welding Works", 20, 20);
 
     doc.setFontSize(14);
