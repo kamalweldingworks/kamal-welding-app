@@ -106,6 +106,43 @@ function downloadPDF(){
         doc.text("Total Amount : Rs. " + total,20,200);
 
     }
+        doc.setFontSize(20);
+    doc.text("Sri Lanka Kamal Welding Works", 20, 20);
+
+    doc.setFontSize(12);
+
+    doc.text("Quotation", 20, 35);
+
+    doc.text("Customer : " + customer, 20, 50);
+    doc.text("Phone : " + phone, 20, 60);
+    doc.text("Date : " + date, 20, 70);
+    doc.text("Address : " + address, 20, 80);
+    doc.text("Job Type : " + job, 20, 90);
+
+    doc.text("Measurements", 20, 105);
+    doc.text("Length : " + length + " ft", 25, 115);
+    doc.text("Width : " + width + " ft", 25, 125);
+    doc.text("Height : " + height + " ft", 25, 135);
+
+    doc.text("Material List", 20, 150);
+
+    let lines = doc.splitTextToSize(materialList, 160);
+    doc.text(lines, 20, 160);
+
+    let y = 160 + (lines.length * 7) + 10;
+
+    doc.text("Material Cost : Rs. " + material, 20, y);
+    doc.text("Labour Charge : Rs. " + labour, 20, y + 10);
+
+    doc.setFont(undefined, "bold");
+    doc.text("Total Amount : Rs. " + total, 20, y + 20);
+
+    doc.setFont(undefined, "normal");
+
+    doc.line(20, y + 35, 190, y + 35);
+
+    doc.text("Customer Signature", 20, y + 50);
+    doc.text("Authorized Signature", 120, y + 50);
 
     doc.save("Quotation.pdf");
 
