@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sri Lanka Kamal Welding Works</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -13,41 +16,59 @@
 
 <h1>🔨 Sri Lanka Kamal Welding Works</h1>
 
+<h2>Language / භාෂාව</h2>
+
+<select id="language">
+    <option value="en">English</option>
+    <option value="si">සිංහල</option>
+</select>
+
 <h2>Customer Details</h2>
 
-<label>Customer Name</label>
-<input type="text" placeholder="Enter Customer Name">
+<label id="lblCustomer">Customer Name</label>
+<input type="text" id="customerName">
 
-<label>Phone Number</label>
-<input type="text" placeholder="Enter Phone Number">
-<label>Date</label>
+<label id="lblPhone">Phone Number</label>
+<input type="text" id="customerPhone">
+
+<label id="lblDate">Date</label>
 <input type="date" id="quotationDate">
-<label>Address</label>
-<textarea placeholder="Enter Address"></textarea>
 
-<label>Job Type</label>
-<select>
-<option>Gate</option>
-<option>Roof</option>
-<option>Handrail</option>
-<option>Grill</option>
-<option>Stair</option>
-<option>Canopy</option>
-<option>Other</option>
+<label id="lblAddress">Address</label>
+<textarea id="customerAddress"></textarea>
+
+<label id="lblJob">Job Type</label>
+
+<select id="jobType">
+    <option>Gate</option>
+    <option>Sliding Gate</option>
+    <option>Roof</option>
+    <option>Handrail</option>
+    <option>Grill</option>
+    <option>Stair</option>
+    <option>Canopy</option>
+    <option>Other</option>
 </select>
 
 <h2>Measurements</h2>
 
 <label>Length (ft)</label>
-<input type="number"id="length">
+<input type="number" id="length">
 
 <label>Width (ft)</label>
 <input type="number" id="width">
 
 <label>Height (ft)</label>
-<input type="number"id="height">
+<input type="number" id="height">
 
-<button>Save Job</button>
+<h2>Upload Job Photo</h2>
+
+<input type="file" id="jobPhoto" accept="image/*">
+
+<h2>Material List</h2>
+
+<textarea id="materialList" rows="6"></textarea>
+
 <h2>Quotation</h2>
 
 <label>Material Cost (Rs.)</label>
@@ -60,11 +81,14 @@
 <input type="number" id="totalAmount" readonly>
 
 <button onclick="calculateTotal()">Calculate Total</button>
+
 <button onclick="downloadPDF()">Download PDF</button>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script src="script.js"></script>
+
+</div>
 
 </body>
 </html>
