@@ -143,3 +143,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("quotationNo").value = quotationNo;
 
 });
+document.getElementById("jobType").addEventListener("change", function () {
+
+    if (this.value === "Gate") {
+
+        const materials = [
+            ["2x2 Box Bar", ""],
+            ["1x1 Box Bar", ""],
+            ["12mm Rod", ""],
+            ["Welding Rod", ""],
+            ["Primer Paint", ""]
+        ];
+
+        const rows = document.querySelectorAll("#materialTable tr");
+
+        for (let i = 1; i < rows.length && i <= materials.length; i++) {
+            rows[i].cells[0].querySelector("input").value = materials[i - 1][0];
+            rows[i].cells[1].querySelector("input").value = materials[i - 1][1];
+        }
+
+    }
+
+});
