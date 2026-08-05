@@ -215,74 +215,6 @@ document.getElementById("calculateBtn").addEventListener("click",function(){
 
     calculateTotals();
 
-});
-// ===============================
-// PART 5 - AUTO MATERIAL LIST
-// ===============================
-
-const materialData = {
-
-    Gate: [
-        ["2x2 Box Bar", "", "No", 0],
-        ["1x1 Box Bar", "", "No", 0],
-        ["12mm Rod", "", "No", 0],
-        ["Welding Rod", "", "Pkt", 0],
-        ["Primer Paint", "", "Tin", 0]
-    ],
-
-    Handrail: [
-        ["1.5x1.5 Box Bar", "", "No", 0],
-        ["1x1 Box Bar", "", "No", 0],
-        ["Welding Rod", "", "Pkt", 0],
-        ["Grinding Disc", "", "No", 0],
-        ["Paint", "", "Tin", 0]
-    ],
-
-    Roof: [
-        ["2x2 Box Bar", "", "No", 0],
-        ["C Purlin", "", "No", 0],
-        ["Roof Sheet", "", "No", 0],
-        ["Roof Screw", "", "Box", 0],
-        ["Paint", "", "Tin", 0]
-    ],
-
-    Grill: [
-        ["1x1 Box Bar", "", "No", 0],
-        ["10mm Rod", "", "No", 0],
-        ["Welding Rod", "", "Pkt", 0],
-        ["Paint", "", "Tin", 0]
-    ],
-
-    Stair: [
-        ["3x3 Box Bar", "", "No", 0],
-        ["2x2 Box Bar", "", "No", 0],
-        ["Checker Plate", "", "Sheet", 0],
-        ["Welding Rod", "", "Pkt", 0],
-        ["Paint", "", "Tin", 0]
-    ],
-
-    Canopy: [
-        ["2x2 Box Bar", "", "No", 0],
-        ["Roof Sheet", "", "No", 0],
-        ["Roof Screw", "", "Box", 0],
-        ["Paint", "", "Tin", 0]
-    ],
-
-    Fence: [
-        ["2x2 Box Bar", "", "No", 0],
-        ["Chain Link", "", "Roll", 0],
-        ["Binding Wire", "", "Kg", 0],
-        ["Paint", "", "Tin", 0]
-    ]
-
-};
-
-document.getElementById("jobType").addEventListener("change", function () {
-
-    const job = this.value;
-
-    if (!materialData[job]) return;
-
     const rows = document.querySelectorAll("#materialTable tbody tr");
 
     rows.forEach((row, index) => {
@@ -296,6 +228,75 @@ document.getElementById("jobType").addEventListener("change", function () {
         row.cells[2].querySelector("input").value = item[2];
         row.cells[3].querySelector("input").value = item[3];
         row.cells[4].querySelector("input").value = 0;
+
+    });
+
+});
+
+/* ==========================================
+   PART 5 - AUTO MATERIAL LIST
+========================================== */
+
+const materialDatabase = {
+    "Gate": [
+        "2x2 Box Bar",
+        "1x1 Box Bar",
+        "12mm Rod",
+        "Welding Rod",
+        "Primer Paint"
+    ],
+
+    "Roof": [
+        "2x2 Box Bar",
+        "C Purlin",
+        "Amano Sheet",
+        "Welding Rod",
+        "Roof Screw"
+    ],
+
+    "Handrail": [
+        "2x2 Box Bar",
+        "1x1 Box Bar",
+        "Welding Rod",
+        "Grinding Disc",
+        "Finish Paint"
+    ],
+
+    "Grill": [
+        "1x1 Box Bar",
+        "10mm Rod",
+        "Welding Rod",
+        "Primer Paint",
+        "Finish Paint"
+    ],
+
+    "Stair Handrail": [
+        "2x2 Box Bar",
+        "1x1 Box Bar",
+        "12mm Rod",
+        "Welding Rod",
+        "Finish Paint"
+    ]
+};
+
+document.getElementById("jobType").addEventListener("change", function () {
+
+    const job = this.value;
+
+    if (!materialDatabase[job]) return;
+
+    const rows = document.querySelectorAll("#materialTable tbody tr");
+
+    rows.forEach((row, index) => {
+
+        const material = materialDatabase[job][index] || "";
+
+        row.querySelector(".materialName").value = material;
+
+        row.querySelector(".qty").value = "";
+        row.querySelector(".unit").value = "";
+        row.querySelector(".rate").value = "";
+        row.querySelector(".total").value = "";
 
     });
 
