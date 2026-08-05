@@ -120,3 +120,331 @@
         </div>
 
     </section>
+    <!-- Job Details -->
+
+    <section class="card">
+
+        <h3>Job Details</h3>
+
+        <div class="grid">
+
+            <div>
+                <label>Job Type</label>
+
+                <select id="jobType">
+
+                    <option value="">-- Select Job --</option>
+
+                    <option>Gate</option>
+                    <option>Sliding Gate</option>
+                    <option>Swing Gate</option>
+                    <option>Handrail</option>
+                    <option>Stair Handrail</option>
+                    <option>Roof</option>
+                    <option>Roof Truss</option>
+                    <option>Grill</option>
+                    <option>Fence</option>
+                    <option>Canopy</option>
+                    <option>Door</option>
+                    <option>Window</option>
+                    <option>Rolling Shutter</option>
+                    <option>Balcony</option>
+                    <option>Stainless Steel Work</option>
+                    <option>Aluminium Work</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Job Description</label>
+
+                <textarea
+                id="jobDescription"
+                rows="4"
+                placeholder="Describe the job..."></textarea>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Measurements -->
+
+    <section class="card">
+
+        <h3>Measurements</h3>
+
+        <div class="grid">
+
+            <div>
+
+                <label>Length</label>
+
+                <input
+                type="number"
+                id="length"
+                placeholder="0">
+
+            </div>
+
+            <div>
+
+                <label>Width</label>
+
+                <input
+                type="number"
+                id="width"
+                placeholder="0">
+
+            </div>
+
+            <div>
+
+                <label>Height</label>
+
+                <input
+                type="number"
+                id="height"
+                placeholder="0">
+
+            </div>
+
+            <div>
+
+                <label>Unit</label>
+
+                <select id="unit">
+
+                    <option>Feet</option>
+                    <option>Inch</option>
+                    <option>Millimeter</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Photo Upload -->
+
+    <section class="card">
+
+        <h3>Job Photo</h3>
+
+        <input
+        type="file"
+        id="jobPhoto"
+        accept="image/*">
+
+        <br><br>
+
+        <img
+        id="photoPreview"
+        width="250">
+
+    </section>
+        <!-- Material List -->
+
+    <section class="card">
+
+        <h3>Material List</h3>
+
+        <table id="materialTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>Material</th>
+
+                    <th>Qty</th>
+
+                    <th>Unit</th>
+
+                    <th>Rate (Rs.)</th>
+
+                    <th>Total (Rs.)</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <select class="materialName">
+                            <option value="">-- Select Material --</option>
+                            <option>2x2 Box Bar</option>
+                            <option>2x1 Box Bar</option>
+                            <option>1x2 Box Bar</option>
+                            <option>1x1 Box Bar</option>
+                            <option>3x3 Box Bar</option>
+                            <option>Angle Iron</option>
+                            <option>Flat Bar</option>
+                            <option>Round Bar</option>
+                            <option>12mm Rod</option>
+                            <option>10mm Rod</option>
+                            <option>8mm Rod</option>
+                            <option>Amano Sheet</option>
+                            <option>C Purlin</option>
+                            <option>Welding Rod</option>
+                            <option>Cutting Disc</option>
+                            <option>Grinding Disc</option>
+                            <option>Primer Paint</option>
+                            <option>Finish Paint</option>
+                            <option>Thinner</option>
+                            <option>Hinges</option>
+                            <option>Lock</option>
+                            <option>Wheel</option>
+                            <option>Screw</option>
+                            <option>Nut & Bolt</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <input type="number" class="qty" value="0">
+                    </td>
+
+                    <td>
+                        <input type="text" class="unit" placeholder="Nos / Ft / Kg">
+                    </td>
+
+                    <td>
+                        <input type="number" class="rate" value="0">
+                    </td>
+
+                    <td>
+                        <input type="number" class="total" value="0" readonly>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <button type="button" id="addMaterial">
+            ➕ Add Material
+        </button>
+
+        <button type="button" id="removeMaterial">
+            ➖ Remove Material
+        </button>
+
+    </section>
+
+    <!-- Cost Summary -->
+
+    <section class="card">
+
+        <h3>Cost Summary</h3>
+
+        <div class="grid">
+
+            <div>
+
+                <label>Material Cost</label>
+
+                <input type="number" id="materialCost" value="0">
+
+            </div>
+
+            <div>
+
+                <label>Labour Cost</label>
+
+                <input type="number" id="labourCost" value="0">
+
+            </div>
+
+            <div>
+
+                <label>Transport Cost</label>
+
+                <input type="number" id="transportCost" value="0">
+
+            </div>
+
+            <div>
+
+                <label>Other Charges</label>
+
+                <input type="number" id="otherCost" value="0">
+
+            </div>
+
+            <div>
+
+                <label>Discount</label>
+
+                <input type="number" id="discount" value="0">
+
+            </div>
+
+            <div>
+
+                <label><strong>Grand Total (Rs.)</strong></label>
+
+                <input type="number" id="grandTotal" value="0" readonly>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- Action Buttons -->
+
+    <section class="card action-buttons">
+
+        <button id="calculateBtn" type="button">
+            💰 Calculate Total
+        </button>
+
+        <button id="pdfBtn" type="button">
+            📄 Download PDF
+        </button>
+
+        <button id="clearBtn" type="button">
+            🗑 Clear Form
+        </button>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <hr>
+
+        <h3>Sri Lanka Kamal Welding Works</h3>
+
+        <p>
+            Professional Steel Fabrication & Welding Services
+        </p>
+
+        <p>
+            We Undertake All Types of Iron Works Anywhere in Sri Lanka
+        </p>
+
+        <p>
+            Thank You For Your Business
+        </p>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
