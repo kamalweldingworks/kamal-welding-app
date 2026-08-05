@@ -1,1 +1,99 @@
 
+/* ==========================================
+   Sri Lanka Kamal Welding Works
+   Welding Quotation App V2.0
+   Professional Theme
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    color:#222;
+    padding:20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+.company h1{
+    color:#b30000;
+    font-size:30px;
+}
+
+.company p{
+    color:#555;
+    margin-top:5px;
+}
+
+.title{
+    text-align:center;
+    color:#111;
+    margin:25px 0;
+}
+
+.card{
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    color:#b30000;
+    margin-bottom:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#b30000;
+}
