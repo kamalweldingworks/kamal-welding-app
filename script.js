@@ -48,8 +48,32 @@ function downloadPDF() {
   let width = document.getElementById("width").value;
   let height = document.getElementById("height").value;
 
-  let materialList = document.getElementById("materialList").value;
+  
+let materialList = "";
 
+const rows = document.querySelectorAll("#materialTable tr");
+
+rows.forEach((row, index) => {
+
+    if (index === 0) return;
+
+    const inputs = row.querySelectorAll("input");
+
+    if (inputs.length >= 2) {
+
+        const name = inputs[0].value;
+
+        const qty = inputs[1].value;
+
+        if (name !== "") {
+
+            materialList += name + " - Qty : " + qty + "\n";
+
+        }
+
+    }
+
+});
   let material = document.getElementById("materialCost").value;
   let labour = document.getElementById("labourCharge").value;
   let total = document.getElementById("totalAmount").value;
