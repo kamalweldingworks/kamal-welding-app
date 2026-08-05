@@ -125,11 +125,12 @@ rows.forEach((row, index) => {
 
   }
 
+  doc.text("Authorized Signature", 120, y + 48);
   doc.save("Quotation.pdf");
 
 }
     
-  doc.text("Authorized Signature", 120, y + 48);
+  
 document.addEventListener("DOMContentLoaded", function () {
 
     const today = new Date();
