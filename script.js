@@ -216,3 +216,87 @@ document.getElementById("calculateBtn").addEventListener("click",function(){
     calculateTotals();
 
 });
+// ===============================
+// PART 5 - AUTO MATERIAL LIST
+// ===============================
+
+const materialData = {
+
+    Gate: [
+        ["2x2 Box Bar", "", "No", 0],
+        ["1x1 Box Bar", "", "No", 0],
+        ["12mm Rod", "", "No", 0],
+        ["Welding Rod", "", "Pkt", 0],
+        ["Primer Paint", "", "Tin", 0]
+    ],
+
+    Handrail: [
+        ["1.5x1.5 Box Bar", "", "No", 0],
+        ["1x1 Box Bar", "", "No", 0],
+        ["Welding Rod", "", "Pkt", 0],
+        ["Grinding Disc", "", "No", 0],
+        ["Paint", "", "Tin", 0]
+    ],
+
+    Roof: [
+        ["2x2 Box Bar", "", "No", 0],
+        ["C Purlin", "", "No", 0],
+        ["Roof Sheet", "", "No", 0],
+        ["Roof Screw", "", "Box", 0],
+        ["Paint", "", "Tin", 0]
+    ],
+
+    Grill: [
+        ["1x1 Box Bar", "", "No", 0],
+        ["10mm Rod", "", "No", 0],
+        ["Welding Rod", "", "Pkt", 0],
+        ["Paint", "", "Tin", 0]
+    ],
+
+    Stair: [
+        ["3x3 Box Bar", "", "No", 0],
+        ["2x2 Box Bar", "", "No", 0],
+        ["Checker Plate", "", "Sheet", 0],
+        ["Welding Rod", "", "Pkt", 0],
+        ["Paint", "", "Tin", 0]
+    ],
+
+    Canopy: [
+        ["2x2 Box Bar", "", "No", 0],
+        ["Roof Sheet", "", "No", 0],
+        ["Roof Screw", "", "Box", 0],
+        ["Paint", "", "Tin", 0]
+    ],
+
+    Fence: [
+        ["2x2 Box Bar", "", "No", 0],
+        ["Chain Link", "", "Roll", 0],
+        ["Binding Wire", "", "Kg", 0],
+        ["Paint", "", "Tin", 0]
+    ]
+
+};
+
+document.getElementById("jobType").addEventListener("change", function () {
+
+    const job = this.value;
+
+    if (!materialData[job]) return;
+
+    const rows = document.querySelectorAll("#materialTable tbody tr");
+
+    rows.forEach((row, index) => {
+
+        const item = materialData[job][index];
+
+        if (!item) return;
+
+        row.cells[0].querySelector("input").value = item[0];
+        row.cells[1].querySelector("input").value = item[1];
+        row.cells[2].querySelector("input").value = item[2];
+        row.cells[3].querySelector("input").value = item[3];
+        row.cells[4].querySelector("input").value = 0;
+
+    });
+
+});
