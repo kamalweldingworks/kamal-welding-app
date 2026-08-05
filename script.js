@@ -71,3 +71,68 @@ function previewPhoto() {
     });
 
 }
+/* ==========================================
+   Material Row Management
+========================================== */
+
+const addBtn = document.getElementById("addMaterial");
+const removeBtn = document.getElementById("removeMaterial");
+const materialTable = document.querySelector("#materialTable tbody");
+
+// Add Material Row
+addBtn.addEventListener("click", function () {
+
+    const row = materialTable.insertRow();
+
+    row.innerHTML = `
+        <td>
+            <select class="materialName">
+                <option value="">-- Select Material --</option>
+                <option>2x2 Box Bar</option>
+                <option>2x1 Box Bar</option>
+                <option>1x2 Box Bar</option>
+                <option>1x1 Box Bar</option>
+                <option>3x3 Box Bar</option>
+                <option>Angle Iron</option>
+                <option>Flat Bar</option>
+                <option>Round Bar</option>
+                <option>12mm Rod</option>
+                <option>10mm Rod</option>
+                <option>8mm Rod</option>
+                <option>Amano Sheet</option>
+                <option>C Purlin</option>
+                <option>Welding Rod</option>
+                <option>Cutting Disc</option>
+                <option>Grinding Disc</option>
+                <option>Primer Paint</option>
+                <option>Finish Paint</option>
+                <option>Thinner</option>
+                <option>Hinges</option>
+                <option>Lock</option>
+                <option>Wheel</option>
+                <option>Screw</option>
+                <option>Nut & Bolt</option>
+            </select>
+        </td>
+
+        <td><input type="number" class="qty" value="0"></td>
+
+        <td><input type="text" class="unit"></td>
+
+        <td><input type="number" class="rate" value="0"></td>
+
+        <td><input type="number" class="total" value="0" readonly></td>
+    `;
+
+});
+
+// Remove Material Row
+removeBtn.addEventListener("click", function () {
+
+    if (materialTable.rows.length > 1) {
+
+        materialTable.deleteRow(materialTable.rows.length - 1);
+
+    }
+
+});
