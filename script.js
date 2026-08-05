@@ -130,3 +130,16 @@ rows.forEach((row, index) => {
 }
     
   doc.text("Authorized Signature", 120, y + 48);
+document.addEventListener("DOMContentLoaded", function () {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    const quotationNo = "Q-" + year + month + day + "-001";
+
+    document.getElementById("quotationNo").value = quotationNo;
+
+});
