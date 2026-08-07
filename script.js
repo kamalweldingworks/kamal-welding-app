@@ -265,3 +265,34 @@ const materialDatabase = {
     ]
 };
 
+/* ==========================================
+   Smart Auto Material Fill V2.1
+========================================== */
+
+document.getElementById("jobType").addEventListener("change", function () {
+
+    const job = this.value;
+
+    if (!JOB_TYPES[job]) return;
+
+    const rows = document.querySelectorAll("#materialTable tbody tr");
+
+    rows.forEach((row, index) => {
+
+        const materialName = JOB_TYPES[job][index] || "";
+
+        row.querySelector(".materialName").value = materialName;
+
+        row.querySelector(".qty").value = 0;
+        row.querySelector(".rate").value = 0;
+        row.querySelector(".total").value = 0;
+
+        const material = MATERIALS.find(m => m.name === materialName);
+
+        row.querySelector(".unit").value = material ? material.unit : "";
+
+    });
+
+    calculateTotals();
+
+});
