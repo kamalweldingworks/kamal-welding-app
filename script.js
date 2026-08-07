@@ -61,3 +61,76 @@ function setupPhotoPreview() {
     });
 
 }
+/* ==========================================
+   Material Table Management
+========================================== */
+
+const materialBody = document.querySelector("#materialTable tbody");
+
+function createEmptyRow(material = "", unit = "") {
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>
+            <select class="materialName"></select>
+        </td>
+
+        <td>
+            <input type="number" class="qty" value="0" min="0">
+        </td>
+
+        <td>
+            <input type="text" class="unit" value="${unit}" readonly>
+        </td>
+
+        <td>
+            <input type="number" class="rate" value="0" min="0">
+        </td>
+
+        <td>
+            <input type="number" class="total" value="0" readonly>
+        </td>
+    `;
+
+    materialBody.appendChild(row);
+
+    const select = row.querySelector(".materialName");
+
+    select.innerHTML = `<option value="">-- Select Material --</option>`;
+
+    MATERIALS.forEach(item => {
+
+        const option = document.createElement("option");
+
+        option.value = item.name;
+        option.textContent = item.name;
+
+        select.appendChild(option);
+
+    });
+
+    select.value = material;
+
+    if (material) {
+
+        const found = MATERIALS.find(m => m.name === material);
+
+        if (found) {
+            row.querySelector(".unit").value = found.unit;
+        }
+
+    }
+
+    select.addEventListener("change", function () {
+
+        const found = MATERIALS.find(m => m.name === this.value);
+
+        row.querySelector(".unit").value =
+            found ? found.unit : "";
+
+        calculateTotals();
+
+    });
+
+}
