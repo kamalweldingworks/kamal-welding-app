@@ -134,3 +134,33 @@ function createEmptyRow(material = "", unit = "") {
     });
 
 }
+/* ==========================================
+   Smart Job Type Material Fill
+========================================== */
+
+const jobTypeSelect = document.getElementById("jobType");
+
+jobTypeSelect.addEventListener("change", function () {
+
+    const job = this.value;
+
+    // Clear existing rows
+    materialBody.innerHTML = "";
+
+    if (!job || !JOB_TYPES[job]) {
+
+        createEmptyRow();
+        return;
+
+    }
+
+    // Create rows automatically
+    JOB_TYPES[job].forEach(materialName => {
+
+        createEmptyRow(materialName);
+
+    });
+
+    calculateTotals();
+
+});
