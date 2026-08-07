@@ -179,3 +179,102 @@
              style="max-width:100%;max-height:250px;border-radius:10px;">
 
     </section>
+<!-- Material List -->
+
+<section class="card">
+
+    <h2>Material List</h2>
+
+    <table id="materialTable">
+
+        <thead>
+
+            <tr>
+
+                <th>Material</th>
+                <th>Qty</th>
+                <th>Unit</th>
+                <th>Rate (Rs.)</th>
+                <th>Total (Rs.)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button type="button" id="addMaterial">
+        ➕ Add Material
+    </button>
+
+    <button type="button" id="removeMaterial">
+        ➖ Remove Material
+    </button>
+
+</section>
+
+<!-- Cost Summary -->
+
+<section class="card">
+
+    <h2>Cost Summary</h2>
+
+    <div class="grid-2">
+
+        <div>
+
+            <label>Material Cost</label>
+
+            <input type="number" id="materialCost" value="0" readonly>
+
+        </div>
+
+        <div>
+
+            <label>Labour Cost</label>
+
+            <input type="number" id="labourCost" value="0">
+
+        </div>
+
+        <div>
+
+            <label>Transport Cost</label>
+
+            <input type="number" id="transportCost" value="0">
+
+        </div>
+
+        <div>
+
+            <label>Other Charges</label>
+
+            <input type="number" id="otherCost" value="0">
+
+        </div>
+
+        <div>
+
+            <label>Discount</label>
+
+            <input type="number" id="discount" value="0">
+
+        </div>
+
+        <div>
+
+            <label><strong>Grand Total (Rs.)</strong></label>
+
+            <input type="number" id="grandTotal" value="0" readonly>
+
+        </div>
+
+    </div>
+
+</section>
