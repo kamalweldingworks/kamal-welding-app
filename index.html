@@ -81,3 +81,101 @@
         </div>
 
     </section>                
+    <!-- Job Details -->
+
+    <section class="card">
+
+        <h2>Job Details</h2>
+
+        <div class="grid-2">
+
+            <div>
+
+                <label>Job Type</label>
+
+                <select id="jobType">
+
+                    <option value="">-- Select Job --</option>
+                    <option>Gate</option>
+                    <option>Sliding Gate</option>
+                    <option>Roof</option>
+                    <option>Handrail</option>
+                    <option>Grill</option>
+                    <option>Stair</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Job Location</label>
+
+                <input type="text" id="jobLocation">
+
+            </div>
+
+            <div class="full-width">
+
+                <label>Job Description</label>
+
+                <textarea id="jobDescription"></textarea>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Measurements -->
+
+    <section class="card">
+
+        <h2>Measurements</h2>
+
+        <div class="grid-3">
+
+            <div>
+
+                <label>Width (ft)</label>
+
+                <input type="number" id="width">
+
+            </div>
+
+            <div>
+
+                <label>Height (ft)</label>
+
+                <input type="number" id="height">
+
+            </div>
+
+            <div>
+
+                <label>Quantity</label>
+
+                <input type="number" id="quantity" value="1">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Job Photo -->
+
+    <section class="card">
+
+        <h2>Job Photo</h2>
+
+        <input type="file" id="jobPhoto" accept="image/*">
+
+        <br><br>
+
+        <img id="photoPreview"
+             src=""
+             alt="Photo Preview"
+             style="max-width:100%;max-height:250px;border-radius:10px;">
+
+    </section>
