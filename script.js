@@ -215,21 +215,7 @@ document.getElementById("calculateBtn").addEventListener("click",function(){
 
     calculateTotals();
 
-    const rows = document.querySelectorAll("#materialTable tbody tr");
-
-    rows.forEach((row, index) => {
-
-        const item = materialData[job][index];
-
-        if (!item) return;
-
-        row.cells[0].querySelector("input").value = item[0];
-        row.cells[1].querySelector("input").value = item[1];
-        row.cells[2].querySelector("input").value = item[2];
-        row.cells[3].querySelector("input").value = item[3];
-        row.cells[4].querySelector("input").value = 0;
-
-    });
+    
 
 });
 
@@ -279,25 +265,3 @@ const materialDatabase = {
     ]
 };
 
-document.getElementById("jobType").addEventListener("change", function () {
-
-    const job = this.value;
-
-    if (!materialDatabase[job]) return;
-
-    const rows = document.querySelectorAll("#materialTable tbody tr");
-
-    rows.forEach((row, index) => {
-
-        const material = materialDatabase[job][index] || "";
-
-        row.querySelector(".materialName").value = material;
-
-        row.querySelector(".qty").value = "";
-        row.querySelector(".unit").value = "";
-        row.querySelector(".rate").value = "";
-        row.querySelector(".total").value = "";
-
-    });
-
-});
