@@ -164,3 +164,68 @@ jobTypeSelect.addEventListener("change", function () {
     calculateTotals();
 
 });
+/* ==========================================
+   Auto Calculation System
+========================================== */
+
+function calculateTotals() {
+
+    let materialCost = 0;
+
+    document.querySelectorAll("#materialTable tbody tr").forEach(row => {
+
+        const qty = parseFloat(row.querySelector(".qty").value) || 0;
+        const rate = parseFloat(row.querySelector(".rate").value) || 0;
+
+        const total = qty * rate;
+
+        row.querySelector(".total").value = total.toFixed(2);
+
+        materialCost += total;
+
+    });
+
+    document.getElementById("materialCost").value = materialCost.toFixed(2);
+
+    const labour =
+        parseFloat(document.getElementById("labourCost").value) || 0;
+
+    const transport =
+        parseFloat(document.getElementById("transportCost").value) || 0;
+
+    const other =
+        parseFloat(document.getElementById("otherCost").value) || 0;
+
+    const discount =
+        parseFloat(document.getElementById("discount").value) || 0;
+
+    const grandTotal =
+        materialCost + labour + transport + other - discount;
+
+    document.getElementById("grandTotal").value =
+        grandTotal.toFixed(2);
+
+}
+
+/* Live Calculation */
+
+document.addEventListener("input", function (e) {
+
+    if (
+        e.target.classList.contains("qty") ||
+        e.target.classList.contains("rate") ||
+        e.target.id === "labourCost" ||
+        e.target.id === "transportCost" ||
+        e.target.id === "otherCost" ||
+        e.target.id === "discount"
+    ) {
+
+        calculateTotals();
+
+    }
+
+});
+
+/* Calculate Button */
+
+document.getElementById("calculateBtn").addEventListener("click", calculateTotals);
