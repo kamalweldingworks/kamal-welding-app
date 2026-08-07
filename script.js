@@ -229,3 +229,63 @@ document.addEventListener("input", function (e) {
 /* Calculate Button */
 
 document.getElementById("calculateBtn").addEventListener("click", calculateTotals);
+/* ==========================================
+   Clear Form
+========================================== */
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+
+    if (!confirm("Clear all data?")) return;
+
+    document.querySelectorAll("input").forEach(input => {
+
+        if (
+            input.type !== "button" &&
+            input.type !== "submit" &&
+            input.id !== "quotationNo" &&
+            input.id !== "quotationDate"
+        ) {
+
+            input.value = "";
+
+        }
+
+    });
+
+    document.querySelectorAll("textarea").forEach(t => t.value = "");
+
+    document.querySelectorAll("select").forEach(select => {
+
+        if (select.id === "jobType") {
+
+            select.selectedIndex = 0;
+
+        } else {
+
+            select.selectedIndex = 0;
+
+        }
+
+    });
+
+    materialBody.innerHTML = "";
+
+    createEmptyRow();
+
+    document.getElementById("photoPreview").src = "";
+
+    generateQuotationNumber();
+    setTodayDate();
+    calculateTotals();
+
+});
+
+/* ==========================================
+   PDF Button
+========================================== */
+
+document.getElementById("pdfBtn").addEventListener("click", () => {
+
+    alert("PDF Export will be added in Version 3.1");
+
+});
