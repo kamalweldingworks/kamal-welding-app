@@ -120,3 +120,77 @@ table select{
     width:100%;
     padding:8px;
 }
+/* ==========================================
+   Buttons
+========================================== */
+
+button{
+    background:#ff3b30;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    margin:5px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#d6281f;
+}
+
+.action-buttons{
+    text-align:center;
+}
+
+/* ==========================================
+   Photo Preview
+========================================== */
+
+#photoPreview{
+    width:100%;
+    max-width:350px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    display:block;
+    margin-top:10px;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.footer{
+    text-align:center;
+    color:#555;
+    padding:20px;
+}
+
+.footer hr{
+    margin-bottom:15px;
+}
+
+/* ==========================================
+   Mobile Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .container{
+        width:98%;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    button{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+}
